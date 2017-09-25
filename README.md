@@ -1,17 +1,15 @@
 Build by:
  ```
- docker build -t <name> .
+ docker build -t hadoop .
  ```
 Run and SSH into the container by:
  ```
- docker run -it <name> /etc/bootstrap.sh -bash
+ docker run -it -p 50070:50070 hadoop /etc/bootstrap.sh -bash
  ```
-To see that Hadoop is working execute:
+Go to http://127.0.0.1:50070/ in your browser and see that Hadoop is working by executing the following inside the Docker image:
 ```
 hadoop version
 ```
-
-
 Create a file and write whatever you want
 ```
 vi /tmp/test.txt
